@@ -1,12 +1,21 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ListComponent } from './book-list/components/list/list.component';
+import { StoreModule } from '@ngrx/store';
+import { BookListReducer } from './book-list/reducers/book-list.reducer';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
-        AppComponent
+        AppComponent,
+        ListComponent
       ],
+      imports: [
+        StoreModule.forRoot({
+          books: BookListReducer
+        })
+      ]
     }).compileComponents();
   }));
 
@@ -26,6 +35,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('h1').textContent).toContain('Welcome to booklist-test!');
+    expect(compiled.querySelector('h1').textContent).toContain('Book List');
   });
 });
