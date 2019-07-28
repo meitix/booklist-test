@@ -1,19 +1,19 @@
 [
     {
       "title": "Eloquent JavaScript, Second Edition",
-      "rate": 0
+      "rate": 4
     },
     {
       "title": "Learning JavaScript Design Patterns",
-      "rate": 0
+      "rate": 2
     },
     {
       "title": "Speaking JavaScript",
-      "rate": 0
+      "rate": 5
     },
     {
       "title": "Programming JavaScript Applications",
-      "rate": 0
+      "rate": 1
     },
     {
       "title": "Understanding ECMAScript 6",
@@ -21,14 +21,14 @@
     },
     {
       "title": "You Don't Know JS",
-      "rate": 0
+      "rate": 3
     },
     {
       "title": "Git Pocket Guide",
-      "rate": 0
+      "rate": 5
     },
     {
       "title": "Designing Evolvable Web APIs with ASP.NET",
-      "rate": 0
+      "rate": 4
     }
   ]
