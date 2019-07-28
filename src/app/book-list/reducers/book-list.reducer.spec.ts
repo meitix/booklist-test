@@ -20,4 +20,12 @@ describe('Rate Book', () => {
 });
 
 
+describe('Initial data', () => {
+  it('Should put the provided data to state', () => {
+    const data = JSON.parse(require('../../data/books.json'));
+    const loadData = new LoadData({data});
+    const newState = BookListReducer(state, loadData);
+    expect(newState).toEqual(data);
+  });
+});
 
