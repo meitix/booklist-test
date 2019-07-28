@@ -1,6 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { take } from 'rxjs/operators';
 import { ListComponent } from './list.component';
+import { RatingComponent } from './rating/rating.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { BookListReducer } from '../../reducers/book-list.reducer';
 
@@ -10,8 +13,13 @@ describe('ListComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ListComponent],
+      declarations: [
+        ListComponent,
+        RatingComponent
+      ],
       imports: [
+        BrowserModule,
+        FormsModule,
         StoreModule.forRoot({
           books: BookListReducer
         })

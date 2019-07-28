@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { BookListReducer } from 'src/app/book-list/reducers/book-list.reducer';
 
+
 describe('RatingComponent', () => {
   let component: RatingComponent;
   let fixture: ComponentFixture<RatingComponent>;
@@ -24,6 +25,7 @@ describe('RatingComponent', () => {
           books: BookListReducer
         })
       ],
+      providers: []
     })
     .compileComponents();
   }));
@@ -42,5 +44,4 @@ describe('RatingComponent', () => {
   it('should contain a select object', () => {
    expect(fixture.nativeElement.querySelector('select')).toBeTruthy();
   });
-
 });

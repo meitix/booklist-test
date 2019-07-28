@@ -1,6 +1,7 @@
 import { RateBook, LoadData, OrderData } from '../actions/book-list.actions';
 import { BookListReducer } from './book-list.reducer';
 import { IBook } from 'src/app/models/book.interface';
+import { BOOKS } from '../../data/books.js';
 let state = [
   { title: 'harry potter', rate: 0 },
   { title: 'harry potter 2', rate: 1 }
@@ -21,7 +22,7 @@ describe('Rate Book', () => {
   });
 });
 
-const data: IBook[] = require('../../data/books.json');
+const data: IBook[] = BOOKS;
 
 describe('Initial data', () => {
   it('Should not manipulate the current state object after creating new state', () => {

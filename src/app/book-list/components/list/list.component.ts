@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
-import { IAppState } from 'src/app/app.state';
 import { Observable } from 'rxjs';
 import { IBook } from 'src/app/models/book.interface';
+import { BookService } from '../../services/book.service';
 
 @Component({
   selector: 'app-list',
@@ -12,9 +11,10 @@ import { IBook } from 'src/app/models/book.interface';
 export class ListComponent implements OnInit {
   books: Observable<IBook[]>;
 
-  constructor(private store: Store<IAppState>) {
-    this.books = this.store.select('books');
-  }
+  constructor(private bookService: BookService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    // get books.
+    this.books = this.bookService.getBooks({orderBy: 'rate' , orderType: 'desc'});
+  }
 }

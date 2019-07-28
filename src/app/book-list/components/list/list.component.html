@@ -1,3 +1,4 @@
 <ul>
-  <li *ngFor="let book of books | async">{{book.title}} - {{book.rate}} stars</li>
+  <li *ngFor="let book of books | async; let i = index"> 
+    <span>{{book.title}} - {{book.rate}} stars </span> <app-rating [id]="i" [book]="book"></app-rating></li>
 </ul>
