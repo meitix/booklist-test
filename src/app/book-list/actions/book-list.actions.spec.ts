@@ -6,7 +6,7 @@ describe('Rate book action class', () => {
     expect(rateBook.type).toEqual(RATE_BOOK);
   });
 
-  it('it should have same payload as pas ses in constructor after initialization', () => {
+  it('it should have same payload as passes in constructor after initialization', () => {
     const payload = { index: 0 , rate: 5 };
     const rateBook = new RateBook(payload);
     expect(rateBook.payload).toEqual(payload);
