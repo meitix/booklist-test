@@ -40,4 +40,13 @@ describe('ListComponent', () => {
       expect(compiled.children.length).toEqual(books.length);
     });
   });
+
+  it('should the books title in each list item element', () => {
+    const compiled = fixture.debugElement;
+    component.books.pipe(take(1)).subscribe(books => {
+      compiled.children.forEach((el, i) => {
+        expect(el.nativeElement.innerText).toContain(books[i].title);
+      });
+    });
+  });
 });
