@@ -3,15 +3,21 @@ import { AppComponent } from './app.component';
 import { ListComponent } from './book-list/components/list/list.component';
 import { StoreModule } from '@ngrx/store';
 import { BookListReducer } from './book-list/reducers/book-list.reducer';
+import { RatingComponent } from './book-list/components/list/rating/rating.component';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [
         AppComponent,
-        ListComponent
+        ListComponent,
+        RatingComponent
       ],
       imports: [
+        BrowserModule,
+        FormsModule,
         StoreModule.forRoot({
           books: BookListReducer
         })
