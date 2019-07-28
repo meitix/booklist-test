@@ -1,0 +1,5 @@
+<label>
+  <select name="rate" [(ngModel)]="book.rate">
+    <option *ngFor="let item of validRates" value="item">{{item}}</option>
+  </select>
+</label>
