@@ -2,9 +2,9 @@ import { Action } from '@ngrx/store';
 import { IBook } from '../../models/book.interface';
 import { produce } from 'immer';
 import {
-  RateBook,
   BookListActions,
-  RATE_BOOK
+  RATE_BOOK,
+  LOAD_DATA
 } from '../actions/book-list.actions';
 
 const initialState: IBook[] = [{ title: 'Harry Potter', rate: 0 }];
@@ -18,7 +18,8 @@ export const BookListReducer = (
       return produce(state, draft => {
         draft[action.payload.index].rate = action.payload.rate;
       });
-
+    case LOAD_DATA:
+      return action.payload.slice();
     default: {
       return state;
     }
