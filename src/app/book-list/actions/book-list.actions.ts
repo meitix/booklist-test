@@ -2,8 +2,8 @@ import { Action } from '@ngrx/store';
 import { IBook } from 'src/app/models/book.interface';
 
 export const RATE_BOOK = '[BOOK] Rate';
-export const ORDER_BOOK_LIST = '[BOOK] Order';
 export const LOAD_DATA = '[BOOK] Load';
+export const ORDER_DATA = '[BOOK] Order';
 
 export class RateBook implements Action {
     readonly type = RATE_BOOK;
@@ -15,5 +15,10 @@ export class LoadData implements Action {
     constructor(public payload: IBook[]) {}
 }
 
+export class OrderData implements Action {
+    readonly type = ORDER_DATA;
+    constructor(public payload: {property: string , orderType: 'asc' | 'desc'}) {}
+}
 
-export type BookListActions = RateBook | LoadData;
+
+export type BookListActions = RateBook | LoadData | OrderData;
