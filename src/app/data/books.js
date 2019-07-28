@@ -1,4 +1,4 @@
-[
+export const BOOKS = [
     {
       "title": "Eloquent JavaScript, Second Edition",
       "rate": 4
