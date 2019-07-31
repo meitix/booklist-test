@@ -11,10 +11,14 @@ import { BookService } from '../../services/book.service';
 export class ListComponent implements OnInit {
   books: Observable<IBook[]>;
 
-  constructor(private bookService: BookService) {}
+  constructor(public bookService: BookService) {}
 
   ngOnInit() {
     // get books.
     this.books = this.bookService.getBooks({orderBy: 'rate' , orderType: 'desc'});
+  }
+
+  toggleRandomRating() {
+    this.bookService.toggleAutoRating();
   }
 }

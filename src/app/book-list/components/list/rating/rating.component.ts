@@ -11,12 +11,15 @@ export class RatingComponent implements OnInit {
   @Input() book: IBook;
   @Input() id: number;
 
-  validRates = [1, 2, 3, 4, 5];
+  validRates: number[];
+
   constructor(private bookService: BookService) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.validRates = this.bookService.getValidRates();
+  }
 
   rateItem(value: number) {
-    this.bookService.rateBook(this.id , value);
+    this.bookService.rateBook(this.id, value);
   }
 }
