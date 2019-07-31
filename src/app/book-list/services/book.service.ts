@@ -64,7 +64,7 @@ export class BookService {
         // generate random index and rate.
         const rateData = {
           index: Math.floor(Math.random() * (books.length)),
-          rate: Math.floor(Math.random() * max(this.getValidRates()))
+          rate: Math.floor(Math.random() * (max(this.getValidRates()) + 1))
         };
 
         // call rate book function with generated values.
